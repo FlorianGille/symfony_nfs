@@ -32,8 +32,8 @@ jobs:
           ${{ runner.os }}-php-
     - name: Install Dependencies
       run: |
-       - wget https://clever-tools.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz
-       - tar -xvf clever-tools-latest_linux.tar.gz
+       wget https://clever-tools.clever-cloud.com/releases/latest/clever-tools-latest_linux.tar.gz
+       tar -xvf clever-tools-latest_linux.tar.gz
        ./clever-tools-latest_linux/clever login --token ${{ secrets.CLEVER_TOKEN }} --secret ${{ secrets.CLEVER_SECRET }}
        ./clever-tools-latest_linux/clever link ${{ secrets.APP_ID }}
        ./clever-tools-latest_linux/clever deploy --force -a ${{ secrets.APP_NAME }}
