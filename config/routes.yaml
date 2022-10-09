@@ -5,3 +5,8 @@ controllers:
 kernel:
     resource: ../src/Kernel.php
     type: annotation
+
+app_conference:
+    path: /conference/
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\ConferenceController::index
